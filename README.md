@@ -39,3 +39,8 @@ migration une scripte code fonction up blueprint $table db pour cree les champs 
 
 
 avec j'ai documentai en factory et seeders et migration pour migration c'est c'est contien deux function up et down 
+
+
+19/02
+
+deference entre save() and create()
