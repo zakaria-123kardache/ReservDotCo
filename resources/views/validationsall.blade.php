@@ -33,7 +33,7 @@
             </button>
             <!-- Brand -->
             <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
-                <h3 class="text-success"><img src="./img/youdemy-logo.png" width="40"><span class="text-info">YOU</span>DemY</h3> 
+                <h3 class="text-success"><img src="./img/youdemy-logo.png" width="40"><span class="text-info">Resrv</span>resrv</h3> 
             </a>
             <!-- User menu (mobile) -->
             
@@ -41,26 +41,30 @@
             <div class="collapse navbar-collapse" id="sidebarCollapse">
                 <!-- Navigation -->
                 <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/dashbordadmin">
+                          <i class="bi bi-house"></i> Dashboard
+                      </a>
+                  </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="./homedashbord.php">
-                            <i class="bi bi-house"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="./users.php">
-                            <i class="bi bi-people"></i> Users
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-warning" aria-current="page" href="./validation.php">
-                            <i class="bi bi-bookmarks"></i> Validation
-                        </a>
-                    </li>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/sall">
+                          <i class="bi bi-file-text"></i> sall
+                      </a>
+                  </li>
 
-                   
+                  <li class="nav-item">
+                      <a class="nav-link active text-warning" aria-current="page" href="/user">
+                          <i class="bi bi-people"></i> Users
+                      </a>
+                  </li>
 
-                </ul>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/validation">
+                          <i class="bi bi-bookmarks"></i> Validation
+                      </a>
+                  </li>
+              </ul>
                 <!-- Divider -->
                 <hr class="navbar-divider my-5 opacity-20">
                
@@ -125,12 +129,10 @@
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">id</th>
-                        <th scope="col">offre Name</th>
-                        <th scope="col">offre Description</th>
-                        <th scope="col">Competence</th>
-                        <th scope="col">Categorie</th>
-                        <th scope="col">Client Name</th>
-                        
+                        <th scope="col">user Name</th>
+                        <th scope="col">sall name</th>
+                        <th scope="col">startdate</th>
+                        <th scope="col">enddate</th>
                         <th scope="col"></th>
                         <th scope="col " class="text-center">Validation</th>
                         <th></th>
@@ -145,23 +147,18 @@
                         </td>
   
                         <td>
-                          <a class="text-heading font-semibold"> ""offrename"" </a>
+                          <a class="text-heading font-semibold"> ""userName"" </a>
                         </td>
   
                         <td>
-                          <a class="text-heading font-semibold"> "offre description " </a>
+                          <a class="text-heading font-semibold"> "Sall Namme " </a>
                         </td>
   
                         <td>
-                          <a class="text-heading font-semibold">
-                            php js java
-                          </a>
+                          <a class="text-heading font-semibold"> "21/02/2025" </a>
                         </td>
                         <td>
-                          <a class="text-heading font-semibold"> developemnt </a>
-                        </td>
-                        <td>
-                          <a class="text-heading font-semibold"> @Kardash </a>
+                          <a class="text-heading font-semibold"> @21/02/2025 </a>
                         </td>
                         <td>
                           <a class="text-heading font-semibold"> </a>

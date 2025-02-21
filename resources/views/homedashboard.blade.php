@@ -60,34 +60,29 @@
                 <div class="collapse navbar-collapse" id="sidebarCollapse">
                     <!-- Navigation -->
                     <ul class="navbar-nav">
-
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="./index">
+                            <a class="nav-link" aria-current="page" href="/dashbordadmin">
                                 <i class="bi bi-house"></i> Dashboard
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./sall">
+                            <a class="nav-link" aria-current="page" href="/sall">
                                 <i class="bi bi-file-text"></i> sall
-
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./user.php">
+                            <a class="nav-link active text-warning" aria-current="page" href="/user">
                                 <i class="bi bi-people"></i> Users
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="./validation.php">
-                                <i class="bi bi-bookmarks"></i> VAlidation
+                            <a class="nav-link" aria-current="page" href="/validation">
+                                <i class="bi bi-bookmarks"></i> Validation
                             </a>
                         </li>
-
-
-
                     </ul>
                     <!-- Divider -->
                     <hr class="navbar-divider my-5 opacity-20">

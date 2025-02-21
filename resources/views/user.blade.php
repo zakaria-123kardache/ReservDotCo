@@ -36,26 +36,26 @@
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./dashbordadmin.php">
+                            <a class="nav-link" aria-current="page" href="/dashbordadmin">
                                 <i class="bi bi-house"></i> Dashboard
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./cours.php">
+                            <a class="nav-link" aria-current="page" href="/sall">
                                 <i class="bi bi-file-text"></i> sall
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="./user.php">
+                            <a class="nav-link active text-warning" aria-current="page" href="/user">
                                 <i class="bi bi-people"></i> Users
                             </a>
                         </li>
-
+      
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="./validation.php">
-                                <i class="bi bi-bookmarks"></i> VAlidation
+                            <a class="nav-link" aria-current="page" href="/validation">
+                                <i class="bi bi-bookmarks"></i> Validation
                             </a>
                         </li>
                     </ul>
@@ -146,9 +146,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!--  -->
-
-
+                                    
                                     <?php foreach ($users as $user): ?>
                                     <tr>
                                         <td>
@@ -215,20 +213,11 @@
                                 </tbody>
                             </table>
                         </div>
-
-
-
-
-
                     </div>
                 </div>
             </section>
         </div>
     </div>
-
-
-
-
 
     <!-- start Modal creat -->
     <div class="modal fade" id="creatuserModal" tabindex="-1" aria-labelledby="creatuserModalLabel"
