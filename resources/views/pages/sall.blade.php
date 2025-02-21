@@ -1,110 +1,4 @@
-<?php
 
-require_once '../../vendor/autoload.php';
-
-use App\Model\Categorie;
-use App\Model\Cours;
-
-
-$coursInstance = new Cours();
-$cours = $coursInstance->findAll();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $coursname = $_POST['coursname'];
-  $courdescription = $_POST['courdescription'];
-  $courcontenu = $_POST['courcontenu'];
-  $courcategorie = $_POST['courcategorie'];
-
-  $photo = '';
-
-  if (!empty($_FILES['courphoto']['name'])) {
-    $uploadDir = '../../public/admin/img/';
-    $photoName = basename($_FILES['courphoto']['name']);
-    $photoPath = $uploadDir . $photoName;
-
-    if (move_uploaded_file($_FILES['courphoto']['tmp_name'], $photoPath)) {
-      $photo = $photoPath;
-    } else {
-      echo 'failed to upload img';
-      exit;
-    }
-  }
-
-  $cour = new Cours();
-  $cour->setName($coursname);
-  $cour->setDescription($courdescription);
-  $cour->setContenu($courcontenu);
-  $cour->setPhoto($photo);
-
-  $categorie = new Categorie();
-  $categorie->setId($courcategorie);
-  $cour->setCategorie($categorie);
-
-  $cour->create($cour);
-
-  header('Location: cours.php');
-  exit;
-}
-
-
-
-// editin cours 
-if (isset($_POST['update_cour'])) {
-  $courid = (int)$_POST['id'];
-  $name = $_POST['coursname'];
-  $description = $_POST['courdescription'];
-  $contenu = $_POST['courcontenu'];
-  $categorieId = (int)$_POST['courcategorie'];
-
-  $photo = '';
-  if (!empty($_FILES['photo']['name'])) {
-    $uploadDir = '../../public/admin/img/';
-    $photoName = basename($_FILES['photo']['name']);
-    $photoPath = $uploadDir . $photoName;
-    if (move_uploaded_file($_FILES['photo']['tmp_name'], $photoPath)) {
-      $photo = $photoPath;
-    }
-  }
-
-  $cour = new Cours();
-  $cour->setId($courid);
-  $cour->setName($name);
-  $cour->setDescription($description);
-  $cour->setContenu($contenu);
-  if (!empty($photo)) {
-    $cour->setPhoto($photo);
-  }
-
-  $categorie = new Categorie();
-  $categorie->setId($categorieId);
-  $cour->setCategorie($categorie);
-
-  $cour->update($cour);
-
-  header('Location: cours.php');
-  exit;
-}
-
-
-
-
-
-
-if (isset($_GET['delete_id'])) {
-    $coursId = (int)$_GET['delete_id'];
-    $cours = new Cours();
-    $deletedRows = $cours->delete($coursId);
-
-    if ($deletedRows > 0) {
-        header("Location: cours.php");
-        exit();
-    } else {
-        echo "Error deleting course";
-    }
-}
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,6 +13,13 @@ if (isset($_GET['delete_id'])) {
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 
 </head>
+<style>
+  @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+</style>
 
 <body>
   <!-- Dashboard -->
@@ -147,13 +48,13 @@ if (isset($_GET['delete_id'])) {
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/sall">
+                <a class="nav-link active text-warning" aria-current="page" href="/sall">
                     <i class="bi bi-file-text"></i> sall
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active text-warning" aria-current="page" href="/user">
+                <a class="nav-link " aria-current="page" href="/user">
                     <i class="bi bi-people"></i> Users
                 </a>
             </li>

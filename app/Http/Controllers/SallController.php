@@ -9,10 +9,16 @@ class SallController extends Controller
 {
 
 
-    public function index()
+    public function sall()
     {
         $sall = Sall::all();
         return view('pages.sall', compact('sall'));
+    }
+
+    public function PathToUpdate(int $id)
+    {
+        $sall = Sall::find($id);
+        return view('pages.salledit', compact('sall'));
     }
 
     public function create(Request $request)
@@ -31,12 +37,6 @@ class SallController extends Controller
         dd($request['id']);
         $sall = Sall::find($request['id']);
         $sall->delete();
-    }
-
-    public function PathToUpdate(int $id)
-    {
-        $sall = Sall::find($id);
-        return view('pages.salledit', compact('sall'));
     }
 
     public function update(Request $request)

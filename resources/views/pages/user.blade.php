@@ -10,6 +10,16 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
+<style>
+    @import url(https://unpkg.com/@webpixels/css@1.1.5/dist/index.css);
+
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+
+</style>
+
 <body>
     <!-- Dashboard -->
     <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
@@ -147,7 +157,7 @@
                                 </thead>
                                 <tbody>
                                     
-                                    <?php foreach ($users as $user): ?>
+                                    {{-- <?php foreach ($users as $user): ?>
                                     <tr>
                                         <td>
                                             <a class="text-heading font-semibold" href="#"><?= $user->getId() ?>
@@ -209,7 +219,7 @@
 
                                         </td>
                                     </tr>
-                                    <?php endforeach; ?>
+                                    <?php endforeach; ?> --}}
                                 </tbody>
                             </table>
                         </div>

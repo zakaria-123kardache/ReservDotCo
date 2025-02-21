@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SallController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomController;
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[WelcomController::class, 'welcome'])->name('welcome');
+Route::get('/sall',[SallController::class, 'sall'])->name('sall');
+Route::get('/user',[UserController::class, 'user'])->name('user');
+Route::get('/validation',[ReservationController::class, 'validation'])->name('validation');
+

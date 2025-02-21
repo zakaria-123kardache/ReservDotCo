@@ -5,8 +5,6 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +17,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </head>
 
-
 <body>
-    <!-- Dashboard -->
-
+    
     <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
         <!-- Vertical Navbar -->
         <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
@@ -61,7 +57,7 @@
                     <!-- Navigation -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/dashbordadmin">
+                            <a class="nav-link active text-warning" aria-current="page" href="/dashbordadmin">
                                 <i class="bi bi-house"></i> Dashboard
                             </a>
                         </li>
@@ -73,7 +69,7 @@
                         </li>
       
                         <li class="nav-item">
-                            <a class="nav-link active text-warning" aria-current="page" href="/user">
+                            <a class="nav-link" aria-current="page" href="/user">
                                 <i class="bi bi-people"></i> Users
                             </a>
                         </li>
@@ -125,9 +121,6 @@
                              
                             </div>
                         </div>
-
-
-
                         <!-- Nav -->
                         <ul class="nav nav-tabs mt-4 overflow-x border-0">
                             <li class="nav-item ">
@@ -143,9 +136,6 @@
                     </div>
                 </div>
             </header>
-
-
-
             <!-- Main -->
             <section class="py-6 bg-surface-secondary">
                 <div class="container-fluid">
@@ -245,13 +235,8 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </section>
-
-
-
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

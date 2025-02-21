@@ -1,14 +1,13 @@
 <?php
 
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youdemy</title>
+  <title>Reservation</title>
   <link rel="stylesheet" href="./style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
@@ -54,13 +53,13 @@
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link active text-warning" aria-current="page" href="/user">
+                      <a class="nav-link " aria-current="page" href="/user">
                           <i class="bi bi-people"></i> Users
                       </a>
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="/validation">
+                      <a class="nav-link active text-warning" aria-current="page" href="/validation">
                           <i class="bi bi-bookmarks"></i> Validation
                       </a>
                   </li>

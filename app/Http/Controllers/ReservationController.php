@@ -9,12 +9,21 @@ class ReservationController extends Controller
 {
     //
 
+    public function validation()
+    {   
+        $validation = Reservation::all();
+        return view('pages.validation', compact('validation'));
+    }
+
+
+
     public function Create(Request $request)
     {
         Reservation::create([
             'startDate' => $request['startDate'],
             'endDate' => $request['endDate'],
-            'status' => $request['status']
+            'status' => $request['status'],
+            'user_id' => $request['user_id'],
         ]);
     }
 
@@ -37,7 +46,8 @@ class ReservationController extends Controller
         $reservation->fill([
             'startDate' => $request->startDate,
             'endDate' => $request->endDate,
-            'status'  => $request->status
+            'status'  => $request->status,
+            'user_id'  => $request->user_id
         ]);
         $reservation->save();
     }
