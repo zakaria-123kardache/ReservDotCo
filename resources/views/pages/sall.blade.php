@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Youdemy</title>
+  <title>Resrvation</title>
   <link rel="stylesheet" href="./style.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
@@ -108,7 +108,7 @@
 
                   <a
                     href="#"
-                    class="btn d-inline-flex btn-sm btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#creatcourModal">
+                    class="btn d-inline-flex btn-sm btn-primary mx-1" data-bs-toggle="modal" data-bs-target="#creatModal">
                     <span class="pe-2">
                       <i class="bi bi-plus"></i>
                     </span>
@@ -139,63 +139,51 @@
               <h5 class="mb-0">Applications</h5>
             </div>
             <div class="row justify-content-start">
-              <?php foreach ($sall as $sall): ?>
-                <div class="col-md-4 p-5">
+              <?php foreach ($sall as $salle): ?>
+              <div class="col-md-4 p-5">
                   <div class="product-card bg-white rounded-4 shadow-sm h-100 position-relative">
-                    <span class="badge bg-danger">New</span>
-                    <div class="overflow-hidden">
-                      <img src="<?= $sall->getPhoto(); ?>" class="product-image w-100" alt="Product">
-                    </div>
-                    <div class="p-4">
-                      <h5 class="fw-bold mb-3"><?= $sall->getName(); ?></h5>
-                      <div class="d-flex align-items-center mb-3">
-                        <div class="me-2">
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star text-warning"></i>
-                          <i class="fas fa-star-half-alt text-warning"></i>
-                        </div>
-
-
-                        <div>
-
-
-                          <td>
-                            <a class="text-heading font-semibold"> <?= $sall->getLocation(); ?> </a>
-                          </td>
-
-                        </div>
-
-
+                      <span class="badge bg-danger">New</span>
+                      <div class="overflow-hidden">
+                          <img src="<?= $salle->photo; ?>" class="product-image w-100" alt="Product">
                       </div>
-                      <p class="text-muted mb-4"><?= $sall->getDescription(); ?></p>
-
-                      <div class="d-flex justify-content-between align-items-center">
-
-                        <a
-                          href="#"
-                          class="btn d-inline-flex btn-sm btn-warning mx-1"
-                          data-bs-toggle="modal" data-bs-target="#editCourseModal">
-                          <span class="pe-2">
-                            <i class="bi bi-pencil"></i>
-                          </span>
-                          Edit
-                        </a>
-
-                        <a href="cours.php?delete_id=<?= $sall->getId(); ?>" >
-                          <button type="button" class="btn d-inline-flex btn-sm btn-danger mx-1">
-                            <i class="bi bi-trash"></i>
-                          </button>
-                        </a>
-
+                      <div class="p-4">
+                          <h5 class="fw-bold mb-3"><?= $salle->name; ?></h5>
+                          <div class="d-flex align-items-center mb-3">
+                              <div class="me-2">
+                                  <i class="fas fa-star text-warning"></i>
+                                  <i class="fas fa-star text-warning"></i>
+                                  <i class="fas fa-star text-warning"></i>
+                                  <i class="fas fa-star text-warning"></i>
+                                  <i class="fas fa-star-half-alt text-warning"></i>
+                              </div>
+          
+                              <div>
+                                  <td>
+                                      <a class="text-heading font-semibold"> <?= $salle->location; ?> </a>
+                                  </td>
+                              </div>
+                          </div>
+                          <p class="text-muted mb-4"><?= $salle->description; ?></p>
+          
+                          <div class="d-flex justify-content-between align-items-center">
+                              <a href="#" class="btn d-inline-flex btn-sm btn-warning mx-1" data-bs-toggle="modal" data-bs-target="#editCourseModal">
+                                  <span class="pe-2">
+                                      <i class="bi bi-pencil"></i>
+                                  </span>
+                                  Edit
+                              </a>
+          
+                              <a href="sall?delete=<?= $salle->id; ?>">
+                                  <button type="button" class="btn d-inline-flex btn-sm btn-danger mx-1">
+                                      <i class="bi bi-trash"></i>
+                                  </button>
+                              </a>
+                          </div>
                       </div>
-
-
-                    </div>
                   </div>
-                </div>
-              <?php endforeach; ?>
+              </div>
+          <?php endforeach; ?>
+          
             </div>
           </div>
         </div>
@@ -204,8 +192,8 @@
     </div>
   </div>
 
-  <!-- start Modal creat cours  -->
-  <div class="modal fade" id="creatcourModal" tabindex="-1" aria-labelledby="creatcourModalLabel" aria-hidden="true">
+  <!-- start Modal creat-->
+  <div class="modal fade" id="creatModal" tabindex="-1" aria-labelledby="creatModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -213,7 +201,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="" enctype="multipart/form-data">
+          <form method="POST" action="{{route('sall')}}" enctype="multipart/form-data">
+            @csrf 
             <div class="mb-3">
               <label for="name" class="form-label">sall name</label>
               <input type="text" class="form-control" name="name" id="name" required>
@@ -231,7 +220,7 @@
 
             <div class="mb-3">
               <label>Photo</label>
-              <input type="file" name="photo" id="CRedit-photo" class="form-control">
+              <input type="text" name="photo" id="CRedit-photo" class="form-control">
             </div>
 
             <button type="submit" class="btn btn-primary">submit</button>

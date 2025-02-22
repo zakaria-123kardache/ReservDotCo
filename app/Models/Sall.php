@@ -14,7 +14,7 @@ class Sall extends Model
         'description',
         'location',
         'photo',
-        'user_id',
+        // 'user_id',
     ];
 
     public function Reservation()

@@ -30,6 +30,8 @@ class SallController extends Controller
             'photo' => $request['photo'],
             'user_id' => $request['user_id'],
         ]);
+
+        return redirect()->route('sall');
     }
 
     public function delete(Request $request)
@@ -51,3 +53,7 @@ class SallController extends Controller
         $sall->save();
     }
 }
+
+
+
+
