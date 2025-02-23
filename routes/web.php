@@ -1,18 +1,19 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SallController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WelcomController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[WelcomController::class, 'welcome'])->name('welcome');
+Route::get('/user',[UserController::class, 'user'])->name('user');
+Route::get('/validation',[ReservationController::class, 'validation'])->name('validation');
+
+
+//================== §! sall !$ =======================//
+Route::get('/sall',[SallController::class, 'sall'])->name('sall');
+Route::post('/sall', [SallController::class, 'create'])->name('sall');
+Route::delete('/sall/{id}', [SallController::class, 'delete'])->name('sall.delete');
+Route::post('/sall/update/{id}', [SallController::class, 'update'])->name('sall.update');
