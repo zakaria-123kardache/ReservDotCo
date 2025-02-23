@@ -11,7 +11,9 @@ Route::get('/',[WelcomController::class, 'welcome'])->name('welcome');
 Route::get('/user',[UserController::class, 'user'])->name('user');
 Route::get('/validation',[ReservationController::class, 'validation'])->name('validation');
 
+
+//================== §! sall !$ =======================//
 Route::get('/sall',[SallController::class, 'sall'])->name('sall');
 Route::post('/sall', [SallController::class, 'create'])->name('sall');
 Route::delete('/sall/{id}', [SallController::class, 'delete'])->name('sall.delete');
-
+Route::post('/sall/update/{id}', [SallController::class, 'update'])->name('sall.update');

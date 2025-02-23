@@ -43,13 +43,15 @@ class SallController extends Controller
 
     public function update(Request $request)
     {
-        $sall = new Sall();
-        $sall->fill([
+        $sall =sall::find($request->sall_id);
+        $sall->update([
             'name' => $request->name,
             'description' => $request->description,
             'location'  => $request->location,
             'photo'  => $request->photo
         ]);
-        $sall->save();
+        return redirect()->route('sall');
     }
 }
+
+
