@@ -34,11 +34,11 @@ class SallController extends Controller
         return redirect()->route('sall');
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
-        dd($request['id']);
-        $sall = Sall::find($request['id']);
+        $sall = Sall::find($id);
         $sall->delete();
+        return redirect()->route('sall');
     }
 
     public function update(Request $request)
@@ -53,7 +53,3 @@ class SallController extends Controller
         $sall->save();
     }
 }
-
-
-
-

@@ -12,6 +12,6 @@ Route::get('/user',[UserController::class, 'user'])->name('user');
 Route::get('/validation',[ReservationController::class, 'validation'])->name('validation');
 
 Route::get('/sall',[SallController::class, 'sall'])->name('sall');
-Route::post('/sall', [SallController::class, 'create']);
-
+Route::post('/sall', [SallController::class, 'create'])->name('sall');
+Route::delete('/sall/{id}', [SallController::class, 'delete'])->name('sall.delete');
 

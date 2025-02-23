@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resrvation</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../../css/app.css">
   <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
@@ -18,6 +18,76 @@
 
 /* Bootstrap Icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+
+.product-card {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #6366f1, #8b5cf6);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
+}
+
+
+
+.suggestion-tag {
+    background: rgba(240, 240, 240, 0.9);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.suggestion-tag:hover {
+    background: #764ba2;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    .suggestion-tag {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+}
 
 </style>
 
@@ -173,11 +243,13 @@
                                   Edit
                               </a>
           
-                              <a href="sall?delete=<?= $salle->id; ?>">
-                                  <button type="button" class="btn d-inline-flex btn-sm btn-danger mx-1">
-                                      <i class="bi bi-trash"></i>
-                                  </button>
-                              </a>
+                              <form action="{{ route('sall.delete', $salle->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE') 
+                                <button type="submit" class="btn d-inline-flex btn-sm btn-danger mx-1" >
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
                           </div>
                       </div>
                   </div>
@@ -202,7 +274,7 @@
         </div>
         <div class="modal-body">
           <form method="POST" action="{{route('sall')}}" enctype="multipart/form-data">
-            @csrf 
+            @csrf  
             <div class="mb-3">
               <label for="name" class="form-label">sall name</label>
               <input type="text" class="form-control" name="name" id="name" required>
